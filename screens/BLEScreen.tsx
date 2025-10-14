@@ -7,9 +7,9 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { Device } from 'react-native-ble-plx';
+import {Device} from 'react-native-ble-plx';
 import KeepAwake from 'react-native-keep-awake';
-import { useBLE } from '../BLEUniversal'; // adjust relative path
+import {useBLE} from '../BLEUniversal'; // adjust relative path
 
 //this is the BLE screen where you can scan for and connect to BLE devices
 //you can also read data from connected devices
@@ -60,7 +60,7 @@ const BLELoggerApp = () => {
         style={styles.container}
         data={devices}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => (
+        renderItem={({item}) => (
           <Text onPress={() => connectToDevice(item)} style={styles.item}>
             {item.name || 'Unnamed Device'}
           </Text>
@@ -71,7 +71,7 @@ const BLELoggerApp = () => {
       <View style={styles.container}>
         {Object.entries(characteristicValues).map(([label, value]) => (
           <Text key={label} style={styles.latestValue}>
-            {label}: {value}
+            {label}: {value.toFixed(2)}
           </Text>
         ))}
       </View>
