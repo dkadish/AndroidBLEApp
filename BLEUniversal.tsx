@@ -1,32 +1,44 @@
+import React, {createContext, useContext, useEffect, useState} from 'react';
+import {BleManager, Device} from 'react-native-ble-plx';
+import {PermissionsAndroid, Platform} from 'react-native';
+import mitt from 'mitt';
+import {AppEventEmitter, BLEDataUpdated} from './types';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { BleManager, Device } from 'react-native-ble-plx';
-import { PermissionsAndroid, Platform } from 'react-native';
+// Create a global event emitter instance
+const eventEmitter: AppEventEmitter = mitt();
 
-//This is your BLE manager + context provider 
+// Export the event emitter so other components can use it
+export {eventEmitter};
 
+//This is your BLE manager + context provider
 
 type BLEContextType = {
   manager: BleManager;
   devices: Device[];
   connectedDevice: Device | null;
-  characteristicValues: { [key: string]: string };
+  characteristicValues: {[key: string]: number}; // Changed from string to number
   scanForDevices: () => void;
   connectToDevice: (device: Device) => Promise<void>;
   enableNotifications: (
     device: Device,
-    characteristics: { serviceUUID: string; characteristicUUID: string; label: string }[]
+    characteristics: {
+      serviceUUID: string;
+      characteristicUUID: string;
+      label: string;
+    }[],
   ) => Promise<void>;
+  eventEmitter: AppEventEmitter; // Expose event emitter
 };
-
 
 const BLEContext = createContext<BLEContextType | undefined>(undefined);
 
-export const BLEProvider = ({ children }: { children: React.ReactNode }) => {
+export const BLEProvider = ({children}: {children: React.ReactNode}) => {
   const [manager] = useState(() => new BleManager());
   const [devices, setDevices] = useState<Device[]>([]);
   const [connectedDevice, setConnectedDevice] = useState<Device | null>(null);
-  const [characteristicValues, setCharacteristicValues] = useState<{ [key: string]: string }>({});
+  const [characteristicValues, setCharacteristicValues] = useState<{
+    [key: string]: number;
+  }>({}); // Changed from string to number
 
   useEffect(() => {
     requestPermissions();
@@ -50,7 +62,11 @@ export const BLEProvider = ({ children }: { children: React.ReactNode }) => {
 
       const granted = await PermissionsAndroid.requestMultiple(permissions);
 
-      if (Object.values(granted).some(result => result !== PermissionsAndroid.RESULTS.GRANTED)) {
+      if (
+        Object.values(granted).some(
+          result => result !== PermissionsAndroid.RESULTS.GRANTED,
+        )
+      ) {
         console.warn('Required BLE permissions not granted');
       }
     }
@@ -62,7 +78,7 @@ export const BLEProvider = ({ children }: { children: React.ReactNode }) => {
 
     manager.startDeviceScan(
       null,
-      { allowDuplicates: false, scanMode: 2 },
+      {allowDuplicates: false, scanMode: 2},
       (error, device) => {
         if (error) {
           console.error('Scan error:', error);
@@ -77,7 +93,7 @@ export const BLEProvider = ({ children }: { children: React.ReactNode }) => {
             return prevDevices;
           });
         }
-      }
+      },
     );
 
     setTimeout(() => {
@@ -111,40 +127,68 @@ export const BLEProvider = ({ children }: { children: React.ReactNode }) => {
   // Enable notifications
   const enableNotifications = async (
     device: Device,
-    characteristics: { serviceUUID: string; characteristicUUID: string; label: string }[]
+    characteristics: {
+      serviceUUID: string;
+      characteristicUUID: string;
+      label: string;
+    }[],
   ) => {
-    for (const { serviceUUID, characteristicUUID, label } of characteristics) {
-      console.log('Enabling notification for', label, serviceUUID, characteristicUUID);
+    for (const {serviceUUID, characteristicUUID, label} of characteristics) {
+      console.log(
+        'Enabling notification for',
+        label,
+        serviceUUID,
+        characteristicUUID,
+      );
 
       try {
-        device.monitorCharacteristicForService(serviceUUID, characteristicUUID, (error, characteristic) => {
-          if (error) {
-            console.error('Notification error:', error);
-            return;
-          }
-
-          const rawValue = characteristic?.value ?? '';
-
-          // Decode base64 -> float32
-          const base64ToFloat32 = (base64String: string): number => {
-            const binary = atob(base64String);
-            const bytes = new Uint8Array(binary.length);
-            for (let i = 0; i < binary.length; i++) {
-              bytes[i] = binary.charCodeAt(i);
+        device.monitorCharacteristicForService(
+          serviceUUID,
+          characteristicUUID,
+          (error, characteristic) => {
+            if (error) {
+              console.error('Notification error:', error);
+              return;
             }
-            const view = new DataView(bytes.buffer);
-            return view.getFloat32(0, true);
-          };
 
-          const floatValue = base64ToFloat32(rawValue);
+            const rawValue = characteristic?.value ?? '';
 
-          setCharacteristicValues(prev => ({
-            ...prev,
-            [label]: floatValue.toFixed(3),
-          }));
+            // Decode base64 -> float32
+            const base64ToFloat32 = (base64String: string): number => {
+              const binary = atob(base64String);
+              const bytes = new Uint8Array(binary.length);
+              for (let i = 0; i < binary.length; i++) {
+                bytes[i] = binary.charCodeAt(i);
+              }
+              const view = new DataView(bytes.buffer);
+              return view.getFloat32(0, true);
+            };
 
-          console.log(`${label}: ${floatValue}`);
-        });
+            const floatValue = base64ToFloat32(rawValue);
+
+            // Update local state for UI
+            setCharacteristicValues(prev => ({
+              ...prev,
+              [label]: floatValue, // Store as number, not string
+            }));
+
+            // Emit BLE data updated event for InfluxDB integration
+            const bleEvent: BLEDataUpdated = {
+              type: 'ble_data_updated',
+              timestamp: new Date(),
+              deviceId: device.id,
+              serviceUUID,
+              characteristicUUID,
+              rawValue,
+              decodedValue: floatValue,
+              source: device.name || 'Unknown Device',
+            };
+
+            eventEmitter.emit('ble_data_updated', bleEvent);
+
+            console.log(`${label}: ${floatValue}`);
+          },
+        );
       } catch (error) {
         console.error('Enable notification error:', error);
       }
@@ -161,8 +205,8 @@ export const BLEProvider = ({ children }: { children: React.ReactNode }) => {
         scanForDevices,
         connectToDevice,
         enableNotifications,
-      }}
-    >
+        eventEmitter,
+      }}>
       {children}
     </BLEContext.Provider>
   );
