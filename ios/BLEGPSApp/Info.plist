@@ -24,22 +24,36 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
+	<!-- Networking permissions -->
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
-  <!-- Blueooth and location access for ios -->
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>This app uses Bluetooth to connect to nearby devices.</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>This app uses Bluetooth to connect to nearby devices.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app uses your location to scan for Bluetooth devices.</string>
 
+	<!-- Bluetooth permissions -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app uses Bluetooth to connect and communicate with nearby environmental sensors.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app uses Bluetooth to connect and communicate with nearby environmental sensors.</string>
+
+	<!-- Location permissions -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app uses your location to tag sensor data with GPS coordinates.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs background location access to continue collecting sensor data when the app is not active.</string>
+
+	<!-- Background mode declarations -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>bluetooth-central</string>
+	</array>
+
+	<!-- Launch and orientation -->
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
