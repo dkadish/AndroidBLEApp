@@ -39,5 +39,8 @@ target 'BLEGPSApp' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false
     )
+
+    # 👇 Add this line for MapLibre React Native
+    $MLRN.post_install(installer)
   end
 end
