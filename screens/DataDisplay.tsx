@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
 import { useBLE } from '../BLEUniversal';
 import { RadarChart } from '@salmonco/react-native-radar-chart';
-import useLiveLocation from '../hooks/useLiveLocation';
+import useLiveLocation from '../util/useLiveLocation';
 
 const DataDisplay = () => {
   const { characteristicValues } = useBLE();
