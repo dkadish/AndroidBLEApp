@@ -8,6 +8,13 @@ PODS:
   - hermes-engine (0.79.2):
     - hermes-engine/Pre-built (= 0.79.2)
   - hermes-engine/Pre-built (0.79.2)
+  - maplibre-react-native (10.4.0):
+    - maplibre-react-native/DynamicLibrary (= 10.4.0)
+    - React
+    - React-Core
+  - maplibre-react-native/DynamicLibrary (10.4.0):
+    - React
+    - React-Core
   - MultiplatformBleAdapter (0.2.0)
   - RCT-Folly (2024.11.18.00):
     - boost
@@ -1437,7 +1444,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-skia (2.2.21):
+  - react-native-skia (2.3.7):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1834,6 +1841,7 @@ PODS:
     - React-logger (= 0.79.2)
     - React-perflogger (= 0.79.2)
     - React-utils (= 0.79.2)
+  - RNGestureHandler (2.29.0):
   - RNCAsyncStorage (2.2.0):
     - DoubleConversion
     - glog
@@ -1858,6 +1866,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNPermissions (5.4.2):
   - RNFS (2.20.0):
     - React-Core
   - RNGestureHandler (2.28.0):
@@ -1961,7 +1970,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - RNWorklets
     - Yoga
-  - RNScreens (4.16.0):
+  - RNScreens (4.18.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1985,9 +1994,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNScreens/common (= 4.16.0)
+    - RNScreens/common (= 4.18.0)
     - Yoga
-  - RNScreens/common (4.16.0):
+  - RNScreens/common (4.18.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2085,7 +2094,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNWorklets (0.6.0):
+  - RNWorklets (0.6.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2108,9 +2117,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNWorklets/worklets (= 0.6.0)
+    - RNWorklets/worklets (= 0.6.1)
     - Yoga
-  - RNWorklets/worklets (0.6.0):
+  - RNWorklets/worklets (0.6.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2133,9 +2142,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNWorklets/worklets/apple (= 0.6.0)
+    - RNWorklets/worklets/apple (= 0.6.1)
     - Yoga
-  - RNWorklets/worklets/apple (0.6.0):
+  - RNWorklets/worklets/apple (0.6.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2170,6 +2179,7 @@ DEPENDENCIES:
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - "maplibre-react-native (from `../node_modules/@maplibre/maplibre-react-native`)"
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -2243,6 +2253,7 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNShare (from `../node_modules/react-native-share`)
@@ -2271,6 +2282,8 @@ EXTERNAL SOURCES:
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2025-03-03-RNv0.79.0-bc17d964d03743424823d7dd1a9f37633459c5c5
+  maplibre-react-native:
+    :path: "../node_modules/@maplibre/maplibre-react-native"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTDeprecation:
@@ -2413,6 +2426,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-fs"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -2434,6 +2449,7 @@ SPEC CHECKSUMS:
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 314be5250afa5692b57b4dd1705959e1973a8ebe
+  maplibre-react-native: 4de0a9d4c32b9fd472efac6f1f7a5532b26f5281
   MultiplatformBleAdapter: b1fddd0d499b96b607e00f0faa8e60648343dc1d
   RCT-Folly: 36fe2295e44b10d831836cc0d1daec5f8abcf809
   RCTDeprecation: 83ffb90c23ee5cea353bd32008a7bca100908f8c
@@ -2470,6 +2486,7 @@ SPEC CHECKSUMS:
   react-native-geolocation-service: 608e1da71a1ac31b4de64d9ef2815f697978c55b
   react-native-keep-awake: afad8a51dfef9fe9655a6344771be32c8596d774
   react-native-safe-area-context: f2239c6eb3752c012c89f25aabb436a18d4265e6
+  react-native-skia: 6c5eb0790af1395d84eae74e0df1635b0cb00ef8
   react-native-skia: a2239bd3738ae77999c857766edc99226b654450
   react-native-slider: dcd0321a3c47241b8afc50b4271be675d8dd2e34
   React-NativeModulesApple: 452b86b29fae99ed0a4015dca3ad9cd222f88abf
@@ -2503,6 +2520,10 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: d5dcc564f129632276bd3184e60f053fcd574d6b
   ReactCodegen: fda99a79c866370190e162083a35602fdc314e5d
   ReactCommon: 4d0da92a5eb8da86c08e3ec34bd23ab439fb2461
+  RNGestureHandler: f29c357da0402e27eb929df5e3ac9fa1b201658e
+  RNPermissions: db3be1a6be82abebc1a09a109aab01117a159b96
+  RNReanimated: c438baba11cdb906b51cd4c8164616136e52e242
+  RNScreens: ff9b889ead6100d019d236599741efc1c4586128
   RNCAsyncStorage: 2cf7d05f5b1bc38680b6c83971e535a6ae9c5bc7
   RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   RNGestureHandler: f8d0f8c032ba1209eb370bcc29e1138788208673
@@ -2510,10 +2531,10 @@ SPEC CHECKSUMS:
   RNScreens: 5ec356ebbf743eafa3d263eda1f15d03299a9f64
   RNShare: 54d9a98353fe21fdbcf0ade081ce823ea1154a4e
   RNSVG: 34a92506b2a4b05fe8f395c444c39ccd33a7c8f6
-  RNWorklets: f7b2c643f9c3fcdf4c7049f237bcf5d308eaaa93
+  RNWorklets: ddf16938b1ed7e878563a4fc8a690968ef3d27f1
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: c758bfb934100bb4bf9cbaccb52557cee35e8bdf
 
-PODFILE CHECKSUM: c99b3505fbb5775ea37971f6ae4a2d3d8932a0b2
+PODFILE CHECKSUM: 344524fd1cdeadbcb530b38dff15dba338d776de
 
 COCOAPODS: 1.16.2

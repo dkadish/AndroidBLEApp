@@ -95,3 +95,108 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+```
+AndroidBLEApp
+├─ .bundle
+│  └─ config
+├─ .eslintrc.js
+├─ .prettierrc.js
+├─ .watchmanconfig
+├─ App.tsx
+├─ BLEUniversal.tsx
+├─ Gemfile
+├─ Gemfile.lock
+├─ README.md
+├─ __tests__
+│  └─ App.test.tsx
+├─ android
+│  ├─ app
+│  │  ├─ proguard-rules.pro
+│  │  └─ src
+│  │     ├─ BLEGPSComponent.js
+│  │     ├─ debug
+│  │     │  └─ AndroidManifest.xml
+│  │     └─ main
+│  │        ├─ AndroidManifest.xml
+│  │        ├─ java
+│  │        │  └─ com
+│  │        │     └─ blegpsapp
+│  │        │        ├─ MainActivity.kt
+│  │        │        └─ MainApplication.kt
+│  │        └─ res
+│  │           ├─ drawable
+│  │           │  └─ rn_edit_text_material.xml
+│  │           ├─ mipmap-hdpi
+│  │           │  ├─ ic_launcher.png
+│  │           │  └─ ic_launcher_round.png
+│  │           ├─ mipmap-mdpi
+│  │           │  ├─ ic_launcher.png
+│  │           │  └─ ic_launcher_round.png
+│  │           ├─ mipmap-xhdpi
+│  │           │  ├─ ic_launcher.png
+│  │           │  └─ ic_launcher_round.png
+│  │           ├─ mipmap-xxhdpi
+│  │           │  ├─ ic_launcher.png
+│  │           │  └─ ic_launcher_round.png
+│  │           ├─ mipmap-xxxhdpi
+│  │           │  ├─ ic_launcher.png
+│  │           │  └─ ic_launcher_round.png
+│  │           └─ values
+│  │              ├─ strings.xml
+│  │              └─ styles.xml
+│  ├─ gradle
+│  │  └─ wrapper
+│  │     ├─ gradle-wrapper.jar
+│  │     └─ gradle-wrapper.properties
+│  ├─ gradle.properties
+│  ├─ gradlew
+│  └─ gradlew.bat
+├─ app.json
+├─ babel.config.js
+├─ components
+│  ├─ LiveLocationMap.tsx
+│  └─ MiniMapOverlay.tsx
+├─ hooks
+│  └─ useLiveLocation.ts
+├─ index.js
+├─ ios
+│  ├─ .xcode.env
+│  ├─ BLEGPSApp
+│  │  ├─ AppDelegate.swift
+│  │  ├─ Images.xcassets
+│  │  │  ├─ AppIcon.appiconset
+│  │  │  │  └─ Contents.json
+│  │  │  └─ Contents.json
+│  │  ├─ Info.plist
+│  │  ├─ LaunchScreen.storyboard
+│  │  └─ PrivacyInfo.xcprivacy
+│  ├─ BLEGPSApp.xcodeproj
+│  │  ├─ project.pbxproj
+│  │  ├─ project.xcworkspace
+│  │  │  └─ xcshareddata
+│  │  │     └─ swiftpm
+│  │  │        └─ Package.resolved
+│  │  └─ xcshareddata
+│  │     └─ xcschemes
+│  │        └─ BLEGPSApp.xcscheme
+│  ├─ BLEGPSApp.xcworkspace
+│  │  ├─ contents.xcworkspacedata
+│  │  └─ xcshareddata
+│  │     └─ swiftpm
+│  ├─ Podfile
+│  └─ Podfile.lock
+├─ jest.config.js
+├─ metro.config.js
+├─ package-lock.json
+├─ package.json
+├─ screens
+│  ├─ BLEScreen.tsx
+│  ├─ DataDisplay.tsx
+│  └─ HomeScreen.tsx
+├─ services
+│  └─ InfluxDBService.tsx
+├─ tsconfig.json
+└─ types.ts
+
+```

@@ -3,12 +3,27 @@ import mitt from "mitt";
 // Flexible metadata for events
 export type EventMetadata = Record<string, string | number | boolean | Date>;
 
-// Olfactory data with flexible structure
-export type OlfactoryData = {
-  readings: Record<string, number>; // e.g., { 'CH4': 150, 'CO2': 400 }
-  units?: Record<string, string>;   // e.g., { 'CH4': 'ppm', 'CO2': 'ppm' }
-  calibration?: Record<string, any>;
-  [key: string]: any; // Allow additional properties
+// Export the event emitter so other components can use it
+export {eventEmitter};
+
+//This is your BLE manager + context provider
+
+type BLEContextType = {
+  manager: BleManager;
+  devices: Device[];
+  connectedDevice: Device | null;
+  characteristicValues: {[key: string]: number}; // Changed from string to number
+  scanForDevices: () => void;
+  connectToDevice: (device: Device) => Promise<void>;
+  enableNotifications: (
+    device: Device,
+    characteristics: {
+      serviceUUID: string;
+      characteristicUUID: string;
+      label: string;
+    }[],
+  ) => Promise<void>;
+  eventEmitter: AppEventEmitter; // Expose event emitter
 };
 // BLE Data Updated Event
 export interface BLEDataUpdated {
@@ -32,7 +47,6 @@ export interface SensorEvent {
     units: Record<string, string>;
   description: string;
   };
-}
 
 // Event map for mitt - maps event types to their payload types
 export type Events = {

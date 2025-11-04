@@ -331,3 +331,22 @@ const styles = StyleSheet.create({
 });
 
 export default DataDisplay;
+
+// Additional code for live location (if needed)
+// import useLiveLocation from '../util/useLiveLocation';
+
+// const { location, error } = useLiveLocation();
+
+// // Debug (optional, remove once verified)
+//   console.log('📡 Location:', location);
+//   console.log('🧪 BLE Values:', characteristicValues);
+//   /////
+//   <View style={styles.locationContainer}>
+//         {error && <Text style={styles.errorText}>Error: {error}</Text>}
+//         {location ? (
+//           <>
+//             <Text>Latitude: {location.latitude.toFixed(6)}</Text>
+//             <Text>Longitude: {location.longitude.toFixed(6)}</Text>
+//           </>
+//         ) : (
+//           <Text>Fetching location...</Text>

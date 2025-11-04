@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04E9D71DF9C5138D482D6731 /* libPods-BLEGPSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51AEF0D7CF1724B51EA7E2A3 /* libPods-BLEGPSApp.a */; };
+		0B75D9413E626B203DC9E21B /* libPods-BLEGPSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C843481994B6D51C64EDB6 /* libPods-BLEGPSApp.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		37201702A5B2516402088B46 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
@@ -19,12 +19,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BLEGPSApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BLEGPSApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = BLEGPSApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		42C48E1DC911DF9BAB61C26E /* Pods-BLEGPSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEGPSApp.debug.xcconfig"; path = "Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp.debug.xcconfig"; sourceTree = "<group>"; };
-		51AEF0D7CF1724B51EA7E2A3 /* libPods-BLEGPSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEGPSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E2FB5748D084632C8C5C941 /* Pods-BLEGPSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEGPSApp.debug.xcconfig"; path = "Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BLEGPSApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BLEGPSApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		834176A27218FB6398290C8F /* Pods-BLEGPSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEGPSApp.release.xcconfig"; path = "Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp.release.xcconfig"; sourceTree = "<group>"; };
+		D2E5560E4684BF67CF606071 /* Pods-BLEGPSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEGPSApp.release.xcconfig"; path = "Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F0C843481994B6D51C64EDB6 /* libPods-BLEGPSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEGPSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E9D71DF9C5138D482D6731 /* libPods-BLEGPSApp.a in Frameworks */,
+				0B75D9413E626B203DC9E21B /* libPods-BLEGPSApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				51AEF0D7CF1724B51EA7E2A3 /* libPods-BLEGPSApp.a */,
+				F0C843481994B6D51C64EDB6 /* libPods-BLEGPSApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,8 +92,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				42C48E1DC911DF9BAB61C26E /* Pods-BLEGPSApp.debug.xcconfig */,
-				834176A27218FB6398290C8F /* Pods-BLEGPSApp.release.xcconfig */,
+				1E2FB5748D084632C8C5C941 /* Pods-BLEGPSApp.debug.xcconfig */,
+				D2E5560E4684BF67CF606071 /* Pods-BLEGPSApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -105,19 +105,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BLEGPSApp" */;
 			buildPhases = (
-				7C76C722D0CB0FFEEDA1EFD0 /* [CP] Check Pods Manifest.lock */,
+				29C67DED9C63721C153DBE6C /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E9644FA0D9D42BD9FC6F0FCE /* [CP] Embed Pods Frameworks */,
-				85FC67E467172848FFA7CE15 /* [CP] Copy Pods Resources */,
+				13D6B8680FAB11DC9A766ABB /* [CP] Embed Pods Frameworks */,
+				3CAF3650164B088BD501E78F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BLEGPSApp;
+			packageProductDependencies = (
+				2C7FC4752716256E085A47AB /* MapLibre */,
+			);
 			productName = BLEGPSApp;
 			productReference = 13B07F961A680F5B00A75B9A /* BLEGPSApp.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				3A2A282060479FB7EE844E10 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,7 +189,24 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		7C76C722D0CB0FFEEDA1EFD0 /* [CP] Check Pods Manifest.lock */ = {
+		13D6B8680FAB11DC9A766ABB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29C67DED9C63721C153DBE6C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,7 +228,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85FC67E467172848FFA7CE15 /* [CP] Copy Pods Resources */ = {
+		3CAF3650164B088BD501E78F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,23 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9644FA0D9D42BD9FC6F0FCE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLEGPSApp/Pods-BLEGPSApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -255,12 +261,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42C48E1DC911DF9BAB61C26E /* Pods-BLEGPSApp.debug.xcconfig */;
+			baseConfigurationReference = 1E2FB5748D084632C8C5C941 /* Pods-BLEGPSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R6DZRB8CS;
+				DEVELOPMENT_TEAM = XB6GNFBVWP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = BLEGPSApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -275,6 +281,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.BLEGPSApp1;
 				PRODUCT_NAME = BLEGPSApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -284,12 +291,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 834176A27218FB6398290C8F /* Pods-BLEGPSApp.release.xcconfig */;
+			baseConfigurationReference = D2E5560E4684BF67CF606071 /* Pods-BLEGPSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R6DZRB8CS;
+				DEVELOPMENT_TEAM = XB6GNFBVWP;
 				INFOPLIST_FILE = BLEGPSApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,6 +310,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.BLEGPSApp1;
 				PRODUCT_NAME = BLEGPSApp;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -483,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A2A282060479FB7EE844E10 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maplibre/maplibre-gl-native-distribution";
+			requirement = {
+				kind = exactVersion;
+				version = 6.17.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C7FC4752716256E085A47AB /* MapLibre */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A2A282060479FB7EE844E10 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = MapLibre;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
