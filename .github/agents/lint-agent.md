@@ -1,3 +1,8 @@
+---
+name: LintAgent
+description: Automatically fixes code style, formatting, and linting issues across the codebase.
+---
+
 # Linting Agent
 
 ## Purpose

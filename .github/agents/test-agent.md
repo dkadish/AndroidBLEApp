@@ -1,3 +1,8 @@
+---
+name: TestAgent
+description: Writes and validates comprehensive tests for the codebase.
+---
+
 # Test Agent
 
 ## Purpose
