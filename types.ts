@@ -45,7 +45,7 @@ export type Events = {
 // Type alias for our event emitter
 export type AppEventEmitter = Emitter<Events>;
 export const emitter = mitt<Events>();
-//here you need to create an event omitter for the sensor data in datadisplay
-//in data dsiplay you will listen to button presses for "arhcive"
-//this means that whatever is archieverd is listed to
-//then tjis listened to even will be implemented with async storage
+//here you need to create an event emitter for the sensor data in datadisplay
+//in data display you will listen to button presses for "archive"
+//this means that whatever is archived is listed to
+//then this listened to event will be implemented with async storage

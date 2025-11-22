@@ -207,7 +207,7 @@ const DataDisplay = () => {
             />
           </View>
         )}
-        {/* this button is for sharing the data file, which we have ti later put in view */}
+        {/* this button is for sharing the data file, which we have to later put in view */}
         <Button onPress={onShare} title="Share" />
         {/* Show raw values for reference */}
         <View style={styles.values}>
@@ -224,7 +224,7 @@ const DataDisplay = () => {
 
         {/* Historical fingerprints */}
 
-        {/* Here we are rendering the fingerpringt data using vitory native visualisation chart */}
+        {/* Here we are rendering the fingerprint data using victory native visualisation chart */}
         {showfingerprints && (
           <View style={{width: '100%', marginTop: 20}}>
             {historicalfingerprints.map((saved, idx) => {
