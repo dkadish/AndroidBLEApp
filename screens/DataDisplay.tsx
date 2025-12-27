@@ -113,6 +113,7 @@ const DataDisplay = () => {
         Etoh: 'ppm',
         NO2: 'ppm',
       },
+      description: description,
     },
   };
 
